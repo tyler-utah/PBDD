@@ -1,0 +1,73 @@
+A BDD package written in Python largly based off of 
+Anderson's notes found:
+http://configit.com/configit_wordpress/wp-content/uploads/2013/07/bdd-eap.pdf
+
+This software is released under a BSD lisense, so feel free to do whatever
+you'd like with it. Please drop me an email though if you find it
+useful or have any questions or comments:
+t.sorensen@utah.edu
+
+Requires:
+
+PBL : a python boolean algebra library (also developed and maintained
+by Tyler Sorensen)
+
+PLY : python bindings to yacc and lex (needed by PBL).
+
+Complete examples on how to run are found in the examples directory
+Please see PBL docs for a language description.
+
+All public interface functions should be documented in include/BDD.py
+but are reproduced here:
+
+def bdd_init(fName):
+    """
+    Initializes a BDD data structure (dictionary) with the 
+    Boolean Formula stored in file name FNAME.
+    """
+
+
+def build(bdd):
+    """
+    Public function to build the BDD. See ite_build
+    for a more efficient build
+    """
+
+def any_sat(bdd):
+
+    """
+    Public function to any_sat. Simply returns an arbitrary
+    satisfying assignement as a list, or [] if none.  
+    """
+
+def sat_count(bdd):
+    """
+    Public function sat_count, returns the number of satisfying
+    assignments
+    """
+
+def all_sat(bdd):
+    """
+    Public function all_sat. Returns all satisfiying assignments
+    in a list of lists form
+    """
+
+def dot_bdd(bdd, fname):
+    """
+    prints a dot file FNAME representing the binary decision
+    diagram BDD
+    """
+
+def stat_string(bdd):
+    """
+    Return a string with some stats about the BDD
+    """
+
+def ite_build(bdd):
+    """
+    Implementation of the efficient 'ite' method of building a BDD
+    discussed in Bryan et al's paper "Efficient Implementation of a
+    BDD Package" Often more efficient than regular build.    
+    """
+
+Tyler Sorensen
